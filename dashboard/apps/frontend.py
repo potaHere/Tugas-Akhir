@@ -19,7 +19,7 @@ def app():
 
     # Load semua data dengan format tanggal yang benar
     sentiment_data = pd.read_csv(
-        'datasets/datasets-keyword-label.csv',
+        'https://raw.githubusercontent.com/potaHere/Tugas-Akhir/refs/heads/main/dashboard/datasets/datasets-keyword-label.csv',
         parse_dates=['created_at'],
         date_format="%d %b %Y"  # Format yang sesuai dengan "30 Dec 2024"
     )
@@ -84,10 +84,10 @@ def app():
     # st.write(f"Menampilkan {len(filtered_data)} dari {len(sentiment_data)} data")
     
     # Data wordcloud - tetap menggunakan semua data
-    wordcloud_data = pd.read_csv('datasets/word_count_labeled.csv')
+    wordcloud_data = pd.read_csv('https://raw.githubusercontent.com/potaHere/Tugas-Akhir/refs/heads/main/dashboard/datasets/word_count_labeled.csv')
     
     # Performance data - tetap menggunakan semua data
-    performance_data = pd.read_csv('datasets/evaluation_results_combine.csv')
+    performance_data = pd.read_csv('https://raw.githubusercontent.com/potaHere/Tugas-Akhir/refs/heads/main/dashboard/datasets/evaluation_results_combine.csv')
     
     # Row 1: Pie Chart 
     col1, col2 = st.columns(2)
