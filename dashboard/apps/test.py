@@ -1,5 +1,5 @@
 import streamlit as st
-from backend import load_model_and_vectorizer, predict_sentiment
+# from backend import load_model_and_vectorizer, predict_sentiment
 
 def app():
     # Dropdown untuk memilih model
