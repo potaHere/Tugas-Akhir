@@ -10,22 +10,22 @@ def app():
 
     # Tombol untuk melakukan prediksi
     if st.button('Prediksi Sentimen'):
-        if model_choice == 'SVM':
-            model_path = 'models/svm_model.pkl'
-            vectorizer_path = 'models/datasets-tfidf.pkl'
-        elif model_choice == 'Naive Bayes':
-            model_path = 'models/nb_model.pkl'
-            vectorizer_path = 'models/datasets-tfidf.pkl'
-        elif model_choice == 'KNN':
-            model_path = 'models/knn_model.pkl'
-            vectorizer_path = 'models/datasets-tfidf.pkl'
+        # if model_choice == 'SVM':
+        #     model_path = 'models/svm_model.pkl'
+        #     vectorizer_path = 'models/datasets-tfidf.pkl'
+        # elif model_choice == 'Naive Bayes':
+        #     model_path = 'models/nb_model.pkl'
+        #     vectorizer_path = 'models/datasets-tfidf.pkl'
+        # elif model_choice == 'KNN':
+        #     model_path = 'models/knn_model.pkl'
+        #     vectorizer_path = 'models/datasets-tfidf.pkl'
             
         # Load model dan vectorizer
-        model, vectorizer = load_model_and_vectorizer(model_path, vectorizer_path)
+        # model, vectorizer = load_model_and_vectorizer(model_path, vectorizer_path)
         
         # Prediksi sentimen
-        prediction = predict_sentiment(model, vectorizer, user_input)
-        st.write(f'#### Prediksi Sentimen: {prediction}')
+        # prediction = predict_sentiment(model, vectorizer, user_input)
+        st.write(f'#### Prediksi Sentimen:')
 
     
 if __name__ == '__main__':

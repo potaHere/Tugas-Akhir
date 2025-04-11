@@ -81,7 +81,7 @@ class MultiApp:
         )
         
         # Render sidebar content
-        show_sidebar()
+        # show_sidebar()
         
         # Eksekusi app function
         app['function']()

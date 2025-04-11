@@ -24,9 +24,12 @@ def get_yearly_sentiment(sentiment_data: pd.DataFrame) -> pd.DataFrame:
     Menghasilkan DataFrame dengan jumlah label sentimen per tahun.
     """
     # Pastikan kolom 'created_at' bertipe datetime
-    sentiment_data['created_at'] = pd.to_datetime(sentiment_data['created_at'], utc=True)
+    # Tidak perlu parameter utc karena kita menggunakan tanggal tanpa timezone
+    sentiment_data['created_at'] = pd.to_datetime(sentiment_data['created_at'])
+    
     # Ekstraksi tahun dari kolom 'created_at'
     sentiment_data['year'] = sentiment_data['created_at'].dt.year
+    
     # Group by tahun dan label, lalu hitung jumlahnya
     yearly_sentiment = sentiment_data.groupby(['year', 'label']).size().reset_index(name='count')
     # Mengatur urutan kategori label
@@ -52,7 +55,8 @@ def get_pivot_sentiment(sentiment_data: pd.DataFrame) -> pd.DataFrame:
     Menghasilkan DataFrame pivot_sentiment dengan jumlah label positif, netral, dan negatif per tahun.
     """
     # Pastikan kolom 'created_at' bertipe datetime
-    sentiment_data['created_at'] = pd.to_datetime(sentiment_data['created_at'], utc=True)
+    # Tidak perlu parameter utc karena kita menggunakan tanggal tanpa timezone
+    sentiment_data['created_at'] = pd.to_datetime(sentiment_data['created_at'])
 
     # Ekstraksi tahun dari kolom 'created_at'
     sentiment_data['Year'] = sentiment_data['created_at'].dt.year

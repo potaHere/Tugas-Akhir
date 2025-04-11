@@ -13,5 +13,5 @@ Dashboard ini berisi analisis sentimen komentar netizen di Twitter terhadap gaji
 """)
 
 app.add_app("Home", frontend.app)
-app.add_app("Test", test.app)
+# app.add_app("Test", test.app)
 app.run()
