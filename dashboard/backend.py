@@ -109,28 +109,28 @@ def generate_wordclouds(wordcloud_data: pd.DataFrame, label_colors: dict) -> dic
 # Memuat Model dan Prediksi Sentimen
 # ======================================
 
-vectorizer = joblib.load('models/datasets-tfidf.pkl')
+# vectorizer = joblib.load('models/datasets-tfidf.pkl')
 
-def load_model_and_vectorizer(model_path, vectorizer_path):
-    """
-    Memuat model dari file pickle.
-    """
-    try:
-        model = joblib.load(model_path)
-        text_vectorizer = joblib.load(vectorizer_path)
-        return model, text_vectorizer
-    except Exception as e:
-        print(f"Error loading model or vectorizer: {e}")
-        return None, None
+# def load_model_and_vectorizer(model_path, vectorizer_path):
+#     """
+#     Memuat model dari file pickle.
+#     """
+#     try:
+#         model = joblib.load(model_path)
+#         text_vectorizer = joblib.load(vectorizer_path)
+#         return model, text_vectorizer
+#     except Exception as e:
+#         print(f"Error loading model or vectorizer: {e}")
+#         return None, None
 
-def predict_sentiment(model, text_vectorizer, text):
-    """
-    Melakukan prediksi sentimen terhadap teks yang diberikan menggunakan model yang dipilih.
-    """
-    try:
-        text_vectorized = text_vectorizer.transform([text])
-        prediction = model.predict(text_vectorized)
-        return prediction[0]
-    except Exception as e:
-        print(f"Error predicting sentiment: {e}")
-        return None
+# def predict_sentiment(model, text_vectorizer, text):
+#     """
+#     Melakukan prediksi sentimen terhadap teks yang diberikan menggunakan model yang dipilih.
+#     """
+#     try:
+#         text_vectorized = text_vectorizer.transform([text])
+#         prediction = model.predict(text_vectorized)
+#         return prediction[0]
+#     except Exception as e:
+#         print(f"Error predicting sentiment: {e}")
+#         return None
